@@ -31,6 +31,7 @@ it('when form get submitted, the form gets emptied', () => {
         target: { value: 'New comment' }
     });
     wrapped.update();
+    expect(wrapped.find('textarea').prop('value')).toEqual('New comment')
     wrapped.find('form').simulate('submit', {})
     wrapped.update();
     expect(wrapped.find('textarea').prop('value')).toEqual('');
