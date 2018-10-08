@@ -4,8 +4,9 @@ import { createStore } from 'redux';
 import reducers from 'reducers';
 
 export default (props) => {
+    const { initialState } = props;
     return(
-        <Provider store={createStore(reducers, {})} >
+        <Provider store={createStore(reducers, initialState)} >
             {props.children}
         </Provider>
     )
